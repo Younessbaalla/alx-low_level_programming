@@ -1,19 +1,21 @@
 #include <stdio.h>
 
-/**
- * main - Entry the alphabet.
- *
- * Return: Always 0 (Success).
- */
-int main(void)
-{
-	char alp[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	int i;
+int main(void) {
+    char letter;
 
-	for (i = 0; i < 52; i++)
-	{
-	putchar(low);
-	}
-	putchar('\n');
-	return (0);
+    // Print lowercase letters
+    for (letter = 'a'; letter <= 'z'; letter++) {
+        putchar(letter);
+    }
+
+    // Print uppercase letters
+    for (letter = 'A'; letter <= 'Z'; letter++) {
+        putchar(letter);
+    }
+
+    // Print new line
+    putchar('\n');
+
+    return 0;
 }
+
