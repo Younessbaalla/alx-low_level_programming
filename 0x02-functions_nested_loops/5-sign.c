@@ -1,7 +1,8 @@
+#include "main.h"
 /**
- * print_sign - The function prints + or - or 0
+ * print_sign - the function prints + or - or 0
  *
- * @n: The function takes an integer
+ * @n: the function takes an integer
  *
  * Return: 1 if n is positive, 0 if equal to 0, -1 if negative
  */
