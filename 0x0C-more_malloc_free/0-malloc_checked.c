@@ -3,9 +3,11 @@
 #include <stdio.h>
 
 /**
- * malloc_checked - cause normal process termination with a status value of 98
- * @b: allocated memory
- * return: a pointer to the allocated memory(b).
+ * malloc_checked - Allocates memory and terminates the program
+ * @b: Size of the memory to allocate
+ *
+ * Return: Pointer to the allocated memory.
+ * If allocation fails, the program terminates with an exit status of 98.
  */
 void *malloc_checked(unsigned int b)
 {
