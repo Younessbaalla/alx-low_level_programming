@@ -1,43 +1,30 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 
 /**
- * _atoi - converts a string to an int
- * @s: memory where is stored
- * Return: the int converted from the string
+ * main - multiplies two numbers.
+ *
+ * @argv: arguments.
+ * @argc: number of arguments.
+ *
+ * Return: return 0,if error return 1.
  */
-int _atoi(char *s)
+int main(int argc, char *argv[])
 {
-	int i, d, len, f, digit, n;
+	int j, mul = 1;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-	while (i < len && f == 0)
+	if (argc > 1 && (argc - 1) == 2)
 	{
-		if (s[i] == '-')
-			++d;
-		if (s[i] >= '0' && s[i] <= '9')
+		for (j = 1; j < argc; j++)
 		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
+			mul *= atoi(argv[j]);
 		}
-		i++;
+		printf("%d\n", mul);
 	}
-	if (f == 0)
-		return (0);
-
-	return (n);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+	return (0);
 }
