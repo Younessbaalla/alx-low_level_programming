@@ -1,50 +1,37 @@
 #include <stdlib.h>
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
+ * main - multiplies two positive numbers.
+ * @argc: number of arguments passed to a program.
+ * @argv: characters in an argument.
  *
- * @s: memory area to be filled
- *
- * @b: char to copy
- *
- * @n: number of times to copy b
- *
- * Return: pointer to the memory area s
+ * Return: Always 0.
  */
-char *_memset(char *s, char b, unsigned int n)
+int main(int argc, char *argv[])
 {
-	unsigned int i;
+	unsigned long mul;
+	int n, j;
 
-	for (i = 0; i < n; i++)
+	if (argc != 3)
 	{
-		s[i] = b;
+		printf("Error\n");
+		exit(98);
 	}
-
-	return (s);
-}
-/**
- * *_calloc - allocates memory for an array
- *
- * @nmemb: number of elements in the array
- *
- * @size: size of each element
- *
- * Return: pointer to allocated memory
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	char *ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	ptr = malloc(size * nmemb);
-
-	if (ptr == NULL)
-		return (NULL);
-
-	_memset(ptr, 0, nmemb * size);
-
-	return (ptr);
+	for (n = 1; n < argc; n++)
+	{
+		for (j = 0; argv[n][j] != '\0'; j++)
+		{
+			if (argv[n][j] > 57 || argv[n][j] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
+	}
+	mul = atoi(argv[1]) * atoi(argv[2]);
+	printf("%lu\n", mul);
+	return (0);
 }
