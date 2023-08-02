@@ -1,13 +1,13 @@
-#include "3-calc.h"
 #include <string.h>
 #include <stdlib.h>
+#include "3-calc.h"
 
 /**
  * get_op_func - compares function with pointer
  * and returns the equal.
  * @s: pointer to char.
  *
- * Return: Nothing.
+ * Return: Always Zero.
  */
 int (*get_op_func(char *s))(int, int)
 {
